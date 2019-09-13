@@ -1,0 +1,108 @@
+@mixin widthHeight($width, $height) {
+    width : $width;
+    height: $height;
+}
+
+@mixin borderInputButton() {
+    border: 2px solid blue;
+    border-radius: 5px;
+}
+.content {
+    background-color: #eaeaea;
+    float: none;
+    margin: 0 auto;
+    height: 650px;
+    .title {
+        text-align: center;
+        padding: 30px;
+    }
+    .form-submit {
+        padding: 20px 0;
+        text-align: center;
+        .input {
+            @include widthHeight(300px, 40px);
+            @include borderInputButton();
+        }
+        .btn-submit {
+            @include widthHeight(70px, 40px);
+            @include borderInputButton();
+        }
+        .btn-cancel {
+            @include widthHeight(70px, 40px);
+            @include borderInputButton();
+        }
+    }
+    .list-item {
+        padding-top: 20px;
+        text-align: center;
+        height: 350px;
+        ul {
+            list-style: none;
+            display: inline-flex;
+            justify-content: center;
+            flex-direction: column-reverse;
+            li {
+                text-align: left;
+                background-color:white;
+                width: 430px;
+                font-size: 20px;
+                color: black;
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 5px;
+                &:hover {
+                    background-color: #3e69ca;
+                    cursor: pointer;
+                }
+                button {
+                    float: right;
+                    border: 2px solid #3d4e7f;
+                    border-radius: 5px;
+                    width: 35px;
+                    height: 35px;
+                    margin-left: 15px;
+                }
+                .done {
+                    color: red;
+                    text-decoration-line: line-through;
+                }
+                .undone {
+                    color: black;
+                }
+            }
+        }
+    }
+    .pagination-custom {
+        padding-top: 25px;
+        #page-numbers {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+            .active {
+                border-color: rgb(128, 128, 128);
+                color: white;
+                background: rgb(30, 15, 165);
+                cursor: default;
+            }
+            li {
+                color: rgb(62, 140, 204);
+                user-select: none;
+                cursor: pointer;
+                margin: 0 3px;
+                padding: 0 5px;
+                border: 1px solid rgb(62, 140, 204);
+                text-align: center;
+                border-radius: 2px;
+                
+                &:not(.active):hover {
+                    background: rgb(62, 140, 204);
+                    color: white;
+                }
+            }
+        } 
+    }
+}
